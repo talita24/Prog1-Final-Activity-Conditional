@@ -7,22 +7,29 @@ int main() {
     scanf("%c %d %d", &type, &Timein, &Timeout);
     hour =  (Timeout-Timein)/100;
     min = Timeout-Timein;
+
     if(min%100>=40){
         min = (min%100)-40;
     }
     else{
         min=min%100;
     }
-    if(type == 'M' && (float)hour <= 3) compute = 0;
-    else if (type -- 'M' && (float) hour > 3)compute - ((float)hour - 3)*10;
-    else if (type == 'C' && (float) hour <= 3)compute = 30;
-    else if (type -- 'C' && (float) hour > 3) compute - (((float)hour-3)*10)+30);
-    else if (type == 'T' && (float) hour <= 3) compute = 50;
-    else if (type -- 'T' && (float) hour > 3) compute - (((float)hour - 3)*25)+50;
+
+    if(type == 'M' && (float)hour <= 3) 
+        compute = 0;
+    else if (type == 'M' && (float) hour > 3)
+        compute = ((float)hour - 3)*10;
+    else if (type == 'C' && (float) hour <= 3)
+        compute = 30;
+    else if (type == 'C' && (float) hour > 3) 
+        compute = (((float)hour-3)*10)+30;
+    else if (type == 'T' && (float) hour <= 3) 
+        compute = 50;
+    else if (type == 'T' && (float) hour > 3) 
+        compute = (((float)hour - 3)*25)+50;
     
     printf("Payment: %0.2f\n", compute);
     printf("Hours: %d\n", hour);
     printf("Minutes: %d", min);
-
-
+    return 0;
 }
